@@ -150,3 +150,4 @@ st.plotly_chart(
 
 st.caption(
     f"Last Updated : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+)
