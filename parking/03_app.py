@@ -33,6 +33,10 @@ if uploaded_file is not None:
 
     keyword = st.text_input("주소 입력")
 
+    df["위도"] = pd.to_numeric(df["위도"], errors="coerce")
+    df["경도"] = pd.to_numeric(df["경도"], errors="coerce")
+    df = df.dropna(subset=["위도", "경도"])
+
     if keyword:
 
         result = df[df["주소"].str.contains(keyword, case=False, na=False)]
@@ -68,6 +72,8 @@ if uploaded_file is not None:
 
     center_lat = df["위도"].mean()
     center_lon = df["경도"].mean()
+
+
 
     m = folium.Map(
         location=[center_lat, center_lon],
