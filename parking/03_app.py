@@ -79,9 +79,9 @@ if uploaded_file is not None:
         popup = f"""
 <b>{row['주차장명']}</b><br>
 주소 : {row['주소']}<br>
-기본요금 : {row['기본요금']}<br>
-추가요금 : {row['추가요금']}<br>
-운영시간 : {row['운영시간']}
+기본요금 : {row['기본 주차 요금']}<br>
+추가요금 : {row['추가 단위 요금']}<br>
+평일 운영 종료시 : {row['평일 운영 종료시각(HHMM)']}
 """
 
         tooltip = f"""
